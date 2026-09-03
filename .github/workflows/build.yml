@@ -25,7 +25,7 @@ jobs:
 
       - name: Decode Code Signing Certificate
         run: |
-          echo ${{ secrets.CA }} | base64 -d > devcert.pfx
+          echo ${{ secrets.development.CA }} | base64 -d > devcert.pfx
         env:
           CERTIFICATE_PFX: ${{ secrets.CERTIFICATE_PFX }}
 
@@ -53,7 +53,7 @@ jobs:
 
       - name: Decode Code Signing Certificate
         run: |
-          echo ${{ secrets.CA }} | base64 -d > devcert.pfx
+          echo ${{ secrets.development.CA }} | base64 -d > devcert.pfx
         env:
           CERTIFICATE_PFX: ${{ secrets.CERTIFICATE_PFX }}
       
