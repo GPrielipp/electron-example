@@ -1,0 +1,28 @@
+{
+  "name": "electron_ex",
+  "version": "1.0.0",
+  "description": "Tutorial",
+  "keywords": [
+    "electron",
+    "node",
+    "react",
+    "js",
+    "html",
+    "css"
+  ],
+  "homepage": "https://github.com/GPrielipp/electron-example#readme",
+  "bugs": {
+    "url": "https://github.com/GPrielipp/electron-example/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/GPrielipp/electron-example.git"
+  },
+  "license": "MIT",
+  "author": "George Prielipp",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
