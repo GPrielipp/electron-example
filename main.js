@@ -2,14 +2,16 @@
  * main process where Node.js APIs are available, and the app lifecycle is managed
  * 
  */
+const { app, BrowserWindow, ipcMain } = require('electron');
+
+const path = require('node:path');
+
+// make sure installer works
+if (require('electron-squirrel-startup')) app.quit();
 
 // check for updates and install them if available
 const { updateElectronApp } = require('update-electron-app');
 updateElectronApp();
-
-const { app, BrowserWindow, ipcMain } = require('electron');
-
-const path = require('node:path');
 
 const createWindow = () => {
 	const win = new BrowserWindow({
