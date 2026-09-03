@@ -1,3 +1,8 @@
+/**
+ * main process where Node.js APIs are available, and the app lifecycle is managed
+ * 
+ */
+
 const { app, BrowserWindow, ipcMain } = require('electron');
 
 const path = require('node:path');
