@@ -20,17 +20,11 @@ jobs:
         
       - name: Install dependencies
         run: npm ci
-      
-      - name: Build Windows INstaller
-        run: npx electron-forge make
+
+      - name: Publish Windows Installer
+        run: npx electron-forge publish
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: windows-installer
-          path: out/make/**/*.exe
 
   build-linux:
     runs-on: ubuntu-latest
@@ -47,13 +41,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build Windows INstaller
-        run: npx electron-forge make
+      - name: Publish Linux Installer
+        run: npx electron-forge publish
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: windows-installer
-          path: out/make/**/*
