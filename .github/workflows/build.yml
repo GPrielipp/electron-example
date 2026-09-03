@@ -1,4 +1,4 @@
-name: Build Windows App
+name: Publish Windows and Linux Apps
 
 on:
   push:
