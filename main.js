@@ -4,7 +4,8 @@
  */
 
 // check for updates and install them if available
-require('update-electron-app')();
+const { updateElectronApp } = require('update-electron-app');
+updateElectronApp();
 
 const { app, BrowserWindow, ipcMain } = require('electron');
 
