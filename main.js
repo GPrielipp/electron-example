@@ -1,9 +1,14 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+
+const path = require('node:path');
 
 const createWindow = () => {
 	const win = new BrowserWindow({
 		width: 800,
-		height: 600
+		height: 600,
+		webPreferences: {
+			preload: path.join(__dirname, 'preload.js'),
+		},
 	});
 
 	win.loadFile('index.html');
@@ -11,6 +16,9 @@ const createWindow = () => {
 
 // create the main browser window when the app is ready
 app.whenReady().then(() => {
+	// need to set up handler prior to starting window so it's available for the renderer process
+	ipcMain.handle('ping', () => 'pong');
+	
 	createWindow();
 	
 	// open a window if none are present (MacOS)
