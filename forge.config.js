@@ -22,7 +22,10 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        certificateFile: process.env.CA || './devcert.pfx',
+        certificatePassword: process.env.CERT_PASSWORD,
+      },
     },
     {
       name: '@electron-forge/maker-zip',

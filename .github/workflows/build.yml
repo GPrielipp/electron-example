@@ -23,6 +23,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Decode Code Signing Certificate
+        run: |
+          echo ${{ secrets.CA }} | base64 -d > devcert.pfx
+        env:
+          CERTIFICATE_PFX: ${{ secrets.CERTIFICATE_PFX }}
+
       - name: Publish Windows Installer
         run: npx electron-forge publish
         env: 
@@ -44,6 +50,12 @@ jobs:
         
       - name: Install dependencies
         run: npm ci
+
+      - name: Decode Code Signing Certificate
+        run: |
+          echo ${{ secrets.CA }} | base64 -d > devcert.pfx
+        env:
+          CERTIFICATE_PFX: ${{ secrets.CERTIFICATE_PFX }}
       
       - name: Publish Linux Installer
         run: npx electron-forge publish
