@@ -3,6 +3,9 @@
  * 
  */
 
+// check for updates and install them if available
+require('update-electron-app')();
+
 const { app, BrowserWindow, ipcMain } = require('electron');
 
 const path = require('node:path');

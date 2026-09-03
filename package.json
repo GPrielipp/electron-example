@@ -42,7 +42,8 @@
     "electron": "^44.1.1"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "electron-squirrel-startup": "^1.0.1",
+    "update-electron-app": "^3.3.0"
   },
   "config": {
     "forge": "./forge.config.js"
